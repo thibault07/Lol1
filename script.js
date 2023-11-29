@@ -1,24 +1,30 @@
 document.getElementById('quiz-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const answers = {
-        A: 0,
-        B: 0
-        // Add more answer categories if needed
-    };
-
     const formData = new FormData(this);
+    let redirectUrl = '';
 
-    for (const [key, value] of formData.entries()) {
-        answers[value]++;
+    // Check the answer for question 2 (q2)
+    const q2Answer = formData.get('q2');
+    switch (q2Answer) {
+        case 'A':
+            redirectUrl = 'quiz-adc.html'; // URL for ADC quiz
+            break;
+        case 'B':
+            redirectUrl = 'quiz-top.html'; // URL for TOP quiz
+            // Note: You have multiple 'B' options for q2, which need to be distinguished if they lead to different quizzes
+            break;
+        // Add cases for other answers if necessary
+        default:
+            redirectUrl = 'defaultQuiz.html'; // Default or error handling URL
+            break;
     }
 
-    let result = "Your Personality: ";
-    if (answers.A > answers.B) {
-        result += "Calm and Collected";
+    // Redirect based on the answer
+    if (redirectUrl) {
+        window.location.href = redirectUrl;
     } else {
-        result += "Anxious and Energetic";
+        // Handle case where no valid answer was chosen or no redirection URL is set
+        document.getElementById('result').innerText = 'Please select an option for question 2.';
     }
-
-    document.getElementById('result').innerText = result;
 });
