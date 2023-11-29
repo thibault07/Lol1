@@ -14,7 +14,8 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
             redirectUrl = 'quiz-top.html'; // URL for TOP quiz
             // Note: You have multiple 'B' options for q2, which need to be distinguished if they lead to different quizzes
             break;
-        // Add cases for other answers if necessary
+        
+            // Add cases for other answers if necessary
         default:
             redirectUrl = 'defaultQuiz.html'; // Default or error handling URL
             break;
