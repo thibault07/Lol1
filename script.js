@@ -8,13 +8,23 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
     const q2Answer = formData.get('q2');
     switch (q2Answer) {
         case 'A':
-            redirectUrl = 'quiz-adc.html'; // URL for ADC quiz
+            redirectUrl = 'quiz-top.html'; // URL for top quiz
             break;
         case 'B':
-            redirectUrl = 'quiz-top.html'; // URL for TOP quiz
+            redirectUrl = 'quiz-mid.html'; // URL for TOP quiz
             // Note: You have multiple 'B' options for q2, which need to be distinguished if they lead to different quizzes
             break;
-        
+        case 'C':
+             redirectUrl = 'quiz-jungler.html'; // URL for top quiz
+             break;
+        case 'D':
+             redirectUrl = 'quiz-adc.html'; // URL for TOP quiz
+             // Note: You have multiple 'B' options for q2, which need to be distinguished if they lead to different quizzes
+             break;
+        case 'E':
+            redirectUrl = 'quiz-support.html'; // URL for TOP quiz
+            // Note: You have multiple 'B' options for q2, which need to be distinguished if they lead to different quizzes
+            break;
             // Add cases for other answers if necessary
         default:
             redirectUrl = 'defaultQuiz.html'; // Default or error handling URL
