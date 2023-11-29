@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slider Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .slider-container {
+    width: 100%;
+    margin: 50px 0;
+  }
+
+  .slider-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="slider-container">
+  <label for="bodyLanguageSlider" class="slider-label">I am very good at reading body language.</label>
+  <input type="range" min="1" max="5" value="3" class="slider" id="bodyLanguageSlider">
+</div>
+
+<script>
+// JavaScript can be used to add interactivity or handle the slider value changes.
+// Example: Update some element based on the slider's value.
+// Here we'll just log the value to the console when it changes.
+const slider = document.getElementById('bodyLanguageSlider');
+slider.oninput = function() {
+  console.log(this.value);
+}
+</script>
+
+</body>
+</html>
