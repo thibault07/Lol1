@@ -13,15 +13,20 @@
   <input type="range" min="1" max="5" value="3" class="slider" id="bodyLanguageSlider">
 </div>
 
-<script>
-// JavaScript can be used to add interactivity or handle the slider value changes.
-// Example: Update some element based on the slider's value.
-// Here we'll just log the value to the console when it changes.
-const slider = document.getElementById('bodyLanguageSlider');
-slider.oninput = function() {
-  console.log(this.value);
-}
-</script>
+<div class="slider-container">
+  <label for="secondSlider" class="slider-label">Second Slider</label>
+  <input type="range" min="1" max="5" value="3" class="slider" id="secondSlider">
+</div>
+
+<div class="slider-container">
+  <label for="thirdSlider" class="slider-label">Third Slider</label>
+  <input type="range" min="1" max="5" value="3" class="slider" id="ThirdSlider">
+</div>
+
+<button id="submitBtn">Submit</button>
+<div id="sumDisplay">Sum: 0</div>
+
+<script src="rolepoint.js"></script>
 
 </body>
 </html>
